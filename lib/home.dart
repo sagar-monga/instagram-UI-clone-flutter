@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_ui/post.dart';
+import 'package:instagram_ui/utils/home/post.dart';
 import 'dart:math' as math;
 
-import 'package:instagram_ui/utils/story.dart';
+import 'package:instagram_ui/utils/home/story.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             buildAppBar(),
             SizedBox(
-              height: 2,
+              height: 10,
             ),
             buildStories(),
             Expanded(
@@ -29,6 +29,9 @@ class HomeScreen extends StatelessWidget {
                     userName: 'User 1',
                     image:
                         'https://allbeststop.com/wp-content/uploads/new-insta-dp-for-boys.jpg',
+                    caption: '*Insert cool caption here*',
+                    likeCount: 145,
+                    commentCount: 45,
                   ),
                   Container(
                     height: 250,
@@ -103,7 +106,7 @@ class HomeScreen extends StatelessWidget {
 
   Container buildStories() {
     return Container(
-      height: 130,
+      height: 120,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
