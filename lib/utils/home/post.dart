@@ -175,6 +175,7 @@ class _PostState extends State<Post> {
             'assets/comment.png',
             color: Colors.white,
           ),
+          // Icon(Icons.chat_bubble_outline_rounded, color: Colors.white),
         ),
         IconButton(
           onPressed: () {},
