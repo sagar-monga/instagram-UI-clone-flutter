@@ -4,15 +4,14 @@ import 'dart:math' as math;
 import 'package:instagram_ui/utils/feed/post.dart';
 import 'package:instagram_ui/utils/feed/story.dart';
 
-
 class NewsFeed extends StatelessWidget {
-  const NewsFeed({ Key? key }) : super(key: key);
+  const NewsFeed({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             buildAppBar(),
             SizedBox(
@@ -21,6 +20,8 @@ class NewsFeed extends StatelessWidget {
             buildStories(),
             Expanded(
               child: ListView(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
                 children: <Widget>[
                   Post(
                     userImage:
@@ -100,6 +101,7 @@ class NewsFeed extends StatelessWidget {
       ),
     );
   }
+
   Row buildAppBar() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
