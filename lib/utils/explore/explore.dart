@@ -39,6 +39,7 @@ class _ExploreState extends State<Explore> {
           children: [
             _buildSearchBar(),
             _showLargeImage(),
+            SizedBox(height: 3),
             _buildImagesGridview(),
           ],
         ),
@@ -52,7 +53,7 @@ class _ExploreState extends State<Explore> {
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 2, crossAxisSpacing: 2),
+            crossAxisCount: 3, mainAxisSpacing: 3, crossAxisSpacing: 3),
         itemBuilder: (BuildContext context, int index) {
           return SizedBox(
             child: Image.network(
@@ -70,7 +71,10 @@ class _ExploreState extends State<Explore> {
     return Container(
       height: size.width, //ScreenWidth
       width: size.width,
-      color: Colors.blue,
+      child: Image.network(
+        'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+        fit: BoxFit.cover,
+      ),
     );
   }
 
