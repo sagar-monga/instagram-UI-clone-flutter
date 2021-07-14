@@ -53,7 +53,10 @@ class _ExploreState extends State<Explore> {
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 3, crossAxisSpacing: 3),
+          crossAxisCount: 3,
+          mainAxisSpacing: 3,
+          crossAxisSpacing: 3,
+        ),
         itemBuilder: (BuildContext context, int index) {
           return SizedBox(
             child: Image.network(
