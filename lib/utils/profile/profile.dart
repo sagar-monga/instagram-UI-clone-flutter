@@ -81,9 +81,11 @@ class _ProfileState extends State<Profile> {
         body: DefaultTabController(
           length: 2,
           child: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
               //Profile part
               _profileSummary(),
+
               //Story Highlights in horizontal SingleChildScrollView
 
               //Tab Bar for showing image grid or tagged images

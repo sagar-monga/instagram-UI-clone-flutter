@@ -14,6 +14,7 @@ class Activity extends StatelessWidget {
             _topBar(),
             Expanded(
               child: ListView(
+                physics: BouncingScrollPhysics(),
                 children: [
                   _followRequests(),
                   Padding(

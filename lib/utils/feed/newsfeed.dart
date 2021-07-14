@@ -12,89 +12,88 @@ class NewsFeed extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: <Widget>[
             buildAppBar(),
             SizedBox(
               height: 10,
             ),
             buildStories(),
-            Expanded(
-              child: ListView(
-                shrinkWrap: true,
-                physics: ClampingScrollPhysics(),
-                children: <Widget>[
-                  Post(
-                    userImage:
-                        'https://allbeststop.com/wp-content/uploads/new-insta-dp-for-boys.jpg',
-                    userName: 'User 1',
-                    image:
-                        'https://allbeststop.com/wp-content/uploads/new-insta-dp-for-boys.jpg',
-                    caption: '*Insert cool caption here*',
-                    likeCount: 145,
-                    commentCount: 45,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
-                    userName: 'User 2',
-                    image:
-                        'https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
-                    caption: 'Cool Scene',
-                    likeCount: 23,
-                    commentCount: 11,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
-                    userName: 'User 5',
-                    image:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
-                    caption: 'Intro Galaxy',
-                    likeCount: 17,
-                    commentCount: 2,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
-                    userName: 'User 3',
-                    image:
-                        'https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/acj-1704-auckland-nighlife-3.jpg',
-                    caption: 'Great Company good vibes',
-                    likeCount: 34,
-                    commentCount: 34,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
-                    userName: 'User 2',
-                    image:
-                        'https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
-                    caption: 'Cool Scene',
-                    likeCount: 23,
-                    commentCount: 11,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
-                    userName: 'User 5',
-                    image:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
-                    caption: 'Intro Galaxy',
-                    likeCount: 17,
-                    commentCount: 2,
-                  ),
-                  Post(
-                    userImage:
-                        'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
-                    userName: 'User 3',
-                    image:
-                        'https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/acj-1704-auckland-nighlife-3.jpg',
-                    caption: 'Great Company good vibes',
-                    likeCount: 34,
-                    commentCount: 34,
-                  ),
-                ],
-              ),
+            ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                Post(
+                  userImage:
+                      'https://allbeststop.com/wp-content/uploads/new-insta-dp-for-boys.jpg',
+                  userName: 'User 1',
+                  image:
+                      'https://allbeststop.com/wp-content/uploads/new-insta-dp-for-boys.jpg',
+                  caption: '*Insert cool caption here*',
+                  likeCount: 145,
+                  commentCount: 45,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
+                  userName: 'User 2',
+                  image:
+                      'https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+                  caption: 'Cool Scene',
+                  likeCount: 23,
+                  commentCount: 11,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
+                  userName: 'User 5',
+                  image:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
+                  caption: 'Intro Galaxy',
+                  likeCount: 17,
+                  commentCount: 2,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
+                  userName: 'User 3',
+                  image:
+                      'https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/acj-1704-auckland-nighlife-3.jpg',
+                  caption: 'Great Company good vibes',
+                  likeCount: 34,
+                  commentCount: 34,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
+                  userName: 'User 2',
+                  image:
+                      'https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+                  caption: 'Cool Scene',
+                  likeCount: 23,
+                  commentCount: 11,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
+                  userName: 'User 5',
+                  image:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/01/sad-pic-for-boys.jpg',
+                  caption: 'Intro Galaxy',
+                  likeCount: 17,
+                  commentCount: 2,
+                ),
+                Post(
+                  userImage:
+                      'https://www.imagediamond.com/blog/wp-content/uploads/2019/07/hair-face-dp.jpg',
+                  userName: 'User 3',
+                  image:
+                      'https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/acj-1704-auckland-nighlife-3.jpg',
+                  caption: 'Great Company good vibes',
+                  likeCount: 34,
+                  commentCount: 34,
+                ),
+              ],
             ),
           ],
         ),
