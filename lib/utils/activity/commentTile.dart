@@ -15,7 +15,6 @@ class CommentTile extends StatefulWidget {
   _CommentTileState createState() => _CommentTileState();
 }
 
-
 //TODO: Make time dynamic as well, if time left then try to save state of the widget in sharedprefs
 class _CommentTileState extends State<CommentTile> {
   bool _isLiked = false;
@@ -46,6 +45,7 @@ class _CommentTileState extends State<CommentTile> {
         ),
         trailing: _isLiked
             ? IconButton(
+                splashColor: Colors.transparent,
                 icon: Icon(
                   Icons.favorite,
                   color: Colors.red,
@@ -58,6 +58,7 @@ class _CommentTileState extends State<CommentTile> {
                 },
               )
             : IconButton(
+                splashColor: Colors.transparent,
                 icon: Icon(
                   Icons.favorite_outline,
                   color: Colors.white70,
