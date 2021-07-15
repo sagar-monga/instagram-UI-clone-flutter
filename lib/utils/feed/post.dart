@@ -73,10 +73,7 @@ class _PostState extends State<Post> {
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Text(
         'View all ${widget.commentCount.toString()} comments',
-        style: TextStyle(
-          color: Colors.white70,
-          fontSize: 18,
-        ),
+        style: Theme.of(context).textTheme.bodyText2,
       ),
     );
   }

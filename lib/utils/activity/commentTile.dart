@@ -72,9 +72,7 @@ class _CommentTileState extends State<CommentTile> {
               ),
         subtitle: Text(
           '5 min ago',
-          style: TextStyle(
-            color: Colors.white70,
-          ),
+          style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 16),
         ),
         isThreeLine: true,
       ),

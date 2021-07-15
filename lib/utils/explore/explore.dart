@@ -103,7 +103,7 @@ class _ExploreState extends State<Explore> {
               SizedBox(width: 10),
               Text(
                 'Search',
-                style: TextStyle(color: Colors.white70),
+                style: Theme.of(context).textTheme.bodyText2,
               ),
             ],
           ),

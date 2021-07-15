@@ -16,7 +16,7 @@ class Activity extends StatelessWidget {
               child: ListView(
                 physics: BouncingScrollPhysics(),
                 children: [
-                  _followRequests(),
+                  _followRequests(context),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                     child: Text(
@@ -145,7 +145,7 @@ class Activity extends StatelessWidget {
     );
   }
 
-  ListTile _followRequests() {
+  ListTile _followRequests(BuildContext context) {
     return ListTile(
       leading: Stack(
         children: [
@@ -195,9 +195,9 @@ class Activity extends StatelessWidget {
       ),
       subtitle: Text(
         'Approve or ignore requests',
-        style: TextStyle(
-          color: Colors.white70,
-        ),
+        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              fontSize: 16,
+            ),
       ),
     );
   }
