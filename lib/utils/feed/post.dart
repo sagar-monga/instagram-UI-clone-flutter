@@ -29,6 +29,7 @@ class _PostState extends State<Post> {
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         buildUserDetails(),
         SizedBox(height: 10),
@@ -56,25 +57,13 @@ class _PostState extends State<Post> {
   Padding _likesLine() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        children: [
-          Text(
-            widget.likeCount.toString(),
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 18,
-            ),
-          ),
-          Text(
-            ' likes',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 18,
-            ),
-          ),
-        ],
+      child: Text(
+        '${widget.likeCount.toString()} likes',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
+          fontSize: 18,
+        ),
       ),
     );
   }
@@ -82,30 +71,12 @@ class _PostState extends State<Post> {
   Padding _commentLine() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        children: [
-          Text(
-            'View all ',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 18,
-            ),
-          ),
-          Text(
-            widget.commentCount.toString(),
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 18,
-            ),
-          ),
-          Text(
-            ' comments',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 18,
-            ),
-          ),
-        ],
+      child: Text(
+        'View all ${widget.commentCount.toString()} comments',
+        style: TextStyle(
+          color: Colors.white70,
+          fontSize: 18,
+        ),
       ),
     );
   }
