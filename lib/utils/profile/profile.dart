@@ -42,59 +42,57 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).canvasColor,
-          leading: Icon(
-            Icons.lock_outline,
-            color: Colors.white,
-          ),
-          title: Row(
-            children: [
-              Text(
-                'alpha.3628__',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Icon(
-                Icons.keyboard_arrow_down,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).canvasColor,
+        leading: Icon(
+          Icons.lock_outline,
+          color: Colors.white,
+        ),
+        title: Row(
+          children: [
+            Text(
+              'alpha.3628__',
+              style: TextStyle(
                 color: Colors.white,
               ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.add_box_outlined),
             ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.menu),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.keyboard_arrow_down,
+              color: Colors.white,
             ),
           ],
         ),
-        body: DefaultTabController(
-          length: 2,
-          child: ListView(
-            physics: BouncingScrollPhysics(),
-            children: [
-              //Profile part
-              _profileSummary(),
-
-              //Story Highlights in horizontal SingleChildScrollView
-
-              //Tab Bar for showing image grid or tagged images
-              _tabbedView(),
-
-              // GridView to display images
-              _imagesGridView(),
-            ],
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add_box_outlined),
           ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+          ),
+        ],
+      ),
+      body: DefaultTabController(
+        length: 2,
+        child: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            //Profile part
+            _profileSummary(),
+
+            //Story Highlights in horizontal SingleChildScrollView
+
+            //Tab Bar for showing image grid or tagged images
+            _tabbedView(),
+
+            // GridView to display images
+            _imagesGridView(),
+          ],
         ),
       ),
     );

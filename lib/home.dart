@@ -21,6 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
     Activity(),
     Profile(),
   ];
+  final List<bool> _selectionStatus = [
+    true,
+    false,
+    false,
+    false,
+    false,
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,13 +43,28 @@ class _HomeScreenState extends State<HomeScreen> {
       showSelectedLabels: false,
       showUnselectedLabels: false,
       items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home_filled)),
-        BottomNavigationBarItem(label: 'Search', icon: Icon(Icons.search)),
+        BottomNavigationBarItem(
+            label: 'Home',
+            icon: _selectionStatus[0]
+                ? Icon(Icons.home_filled)
+                : Icon(Icons.home_outlined)),
+        BottomNavigationBarItem(
+            label: 'Search',
+            icon: _selectionStatus[1]
+                ? Icon(Icons.search_sharp)
+                : Icon(Icons.search)),
         BottomNavigationBarItem(
             label: 'Add Post', icon: Icon(Icons.add_box_outlined)),
         BottomNavigationBarItem(
-            label: 'Likes', icon: Icon(Icons.favorite_border)),
-        BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.person)),
+            label: 'Likes',
+            icon: _selectionStatus[3]
+                ? Icon(Icons.favorite)
+                : Icon(Icons.favorite_border)),
+        BottomNavigationBarItem(
+            label: 'Profile',
+            icon: _selectionStatus[4]
+                ? Icon(Icons.person)
+                : Icon(Icons.person_outline)),
       ],
     );
   }
@@ -50,6 +72,15 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onTabTapped(int index) {
     setState(() {
       currentIndex = index;
+      _setAllFalse();
+      _selectionStatus[index] = true;
     });
+  }
+
+  void _setAllFalse() {
+    _selectionStatus[0] = false;
+    _selectionStatus[1] = false;
+    _selectionStatus[3] = false;
+    _selectionStatus[4] = false;
   }
 }
